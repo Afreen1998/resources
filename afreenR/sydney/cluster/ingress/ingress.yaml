@@ -1,0 +1,62 @@
+# apiVersion: extensions/v1beta1
+# kind: Ingress
+# metadata:
+#   annotations:
+#     ingress.bluemix.net/large-client-header-buffers: 4 64k
+#   name: mf
+#   namespace: mf
+# spec:
+#   rules:
+#   - host: mf.mobileservices-syd.au-syd.containers.appdomain.cloud
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: mfp-orchestrator
+#           servicePort: 3000
+#         path: /mobilefoundation
+#       - backend:
+#           serviceName: mfp-overview-dashboard
+#           servicePort: 3000
+#         path: /liveness
+#       - backend:
+#           serviceName: mfp-overview-dashboard
+#           servicePort: 3000
+#         path: /readiness
+#       - backend:
+#           serviceName: mfp-overview-dashboard
+#           servicePort: 3000
+#         path: /mobile
+#   - host: mfp-orchestrator.mobileservices-syd.au-syd.containers.appdomain.cloud
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: mfp-orchestrator
+#           servicePort: 3000
+#         path: /
+#   - host: mfbroker.mobileservices-syd.au-syd.containers.appdomain.cloud
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: mfp-service-broker
+#           servicePort: 3000
+#         path: /
+#   - host: analytics-server.mobileservices-syd.au-syd.containers.appdomain.cloud
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: analytics-server
+#           servicePort: 9080
+#         path: /
+#   tls:
+#   - hosts:
+#     - mfbroker.mobileservices-syd.au-syd.containers.appdomain.cloud
+#     secretName: mobileservices-syd
+#   - hosts:
+#     - analytics-server.mobileservices-syd.au-syd.containers.appdomain.cloud
+#     secretName: mobileservices-syd
+#   - hosts:
+#     - mfp-orchestrator.mobileservices-syd.au-syd.containers.appdomain.cloud
+#     secretName: mobileservices-syd
+#   - hosts:
+#     - mf.mobileservices-syd.au-syd.containers.appdomain.cloud
+#     secretName: mobileservices-syd

@@ -1,0 +1,160 @@
+# apiVersion: extensions/v1beta1
+# kind: Ingress
+# metadata:
+#   name: mf
+#   namespace: mf
+# spec:
+#   rules:
+#   - host: analytics-server.mobileservices-dev.us-south.containers.mybluemix.net
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: analytics-server
+#           servicePort: 9080
+#         path: /
+#   - host: analytics-dashboard.mobileservices-dev.us-south.containers.mybluemix.net
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: analytics-dashboard
+#           servicePort: 39012
+#         path: /
+#   - host: analytics-servicebroker.mobileservices-dev.us-south.containers.mybluemix.net
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: analytics-servicebroker
+#           servicePort: 9080
+#         path: /
+#   - host: mfp-derbybackup-app.mobileservices-dev.us-south.containers.mybluemix.net
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: mfp-derbybackup-app
+#           servicePort: 3000
+#         path: /
+#   - host: mfp-poolmanager.mobileservices-dev.us-south.containers.mybluemix.net
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: mfp-poolmanager
+#           servicePort: 3000
+#         path: /
+#   - host: mfp-devicecount-billinvoice-creator.mobileservices-dev.us-south.containers.mybluemix.net
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: mfp-devicecount-billinvoice-creator
+#           servicePort: 3000
+#         path: /
+#   - host: mfp-billinvoice-creator.mobileservices-dev.us-south.containers.mybluemix.net
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: mfp-billinvoice-creator
+#           servicePort: 3000
+#         path: /
+#   - host: mfp-billing-aggregator.mobileservices-dev.us-south.containers.mybluemix.net
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: mfp-billing-aggregator
+#           servicePort: 3000
+#         path: /
+#   - host: mfbroker.mobileservices-dev.us-south.containers.mybluemix.net
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: mfp-service-broker
+#           servicePort: 3000
+#         path: /
+#   - host: mfporchestrator.mobileservices-dev.us-south.containers.mybluemix.net
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: mfp-orchestrator
+#           servicePort: 3000
+#         path: /
+#   - host: mfpfileserver.mobileservices-dev.us-south.containers.mybluemix.net
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: mfp-fileserver
+#           servicePort: 3000
+#         path: /
+#   - host: mfp-ltpa-server.mobileservices-dev.us-south.containers.mybluemix.net
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: mfp-ltpa-server
+#           servicePort: 9080
+#         path: /
+#   - host: analytics-dashboard.mobileservices-dev.us-south.containers.mybluemix.net
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: analytics-dashboard
+#           servicePort: 39012
+#         path: /
+#   - host: mf.mobileservices-dev.us-south.containers.mybluemix.net
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: mfp-orchestrator
+#           servicePort: 3000
+#         path: /mobilefoundation
+#       - backend:
+#           serviceName: mfp-overview-dashboard
+#           servicePort: 3000
+#         path: /liveness
+#       - backend:
+#           serviceName: mfp-overview-dashboard
+#           servicePort: 3000
+#         path: /readiness
+#       - backend:
+#           serviceName: mfp-overview-dashboard
+#           servicePort: 3000
+#         path: /mobile
+#   tls:
+#   - hosts:
+#     - analytics-dashboard.mobileservices-dev.us-south.containers.mybluemix.net
+#     secretName: mobileservices-dev
+#   - hosts:
+#     - analytics-servicebroker.mobileservices-dev.us-south.containers.mybluemix.net
+#     secretName: mobileservices-dev
+#   - hosts:
+#     - mfp-derbybackup-app.mobileservices-dev.us-south.containers.mybluemix.net
+#     secretName: mobileservices-dev
+#   - hosts:
+#     - mfp-poolmanager.mobileservices-dev.us-south.containers.mybluemix.net
+#     secretName: mobileservices-dev
+#   - hosts:
+#     - mfp-devicecount-billinvoice-creator.mobileservices-dev.us-south.containers.mybluemix.net
+#     secretName: mobileservices-dev
+#   - hosts:
+#     - mfp-billinvoice-creator.mobileservices-dev.us-south.containers.mybluemix.net
+#     secretName: mobileservices-dev
+#   - hosts:
+#     - mfp-billing-aggregator.mobileservices-dev.us-south.containers.mybluemix.net
+#     secretName: mobileservices-dev
+#   - hosts:
+#     - mfporchestrator.mobileservices-dev.us-south.containers.mybluemix.net
+#     secretName: mobileservices-dev
+#   - hosts:
+#     - mf.mobileservices-dev.us-south.containers.mybluemix.net
+#     secretName: mobileservices-dev
+#   - hosts:
+#     - mfpfileserver.mobileservices-dev.us-south.containers.mybluemix.net
+#     secretName: mobileservices-dev
+#   - hosts:
+#     - mfbroker.mobileservices-dev.us-south.containers.mybluemix.net
+#     secretName: mobileservices-dev
+#   - hosts:
+#     - mfp-ltpa-server.mobileservices-dev.us-south.containers.mybluemix.net
+#     secretName: mobileservices-dev
+#   - hosts:
+#     - analytics-server.mobileservices-dev.us-south.containers.mybluemix.net
+#     secretName: mobileservices-dev
+#   - hosts:
+#     - analytics-dashboard.mobileservices-dev.us-south.containers.mybluemix.net
+#     secretName: mobileservices-dev

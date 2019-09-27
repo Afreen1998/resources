@@ -1,0 +1,176 @@
+# apiVersion: extensions/v1beta1
+# kind: Ingress
+# metadata:
+#   annotations:
+#     ingress.bluemix.net/large-client-header-buffers: 4 64k
+#   name: mf
+#   namespace: mf
+# spec:
+#   rules:
+#     - host: analytics-server.mobileservices-staging.us-south.containers.mybluemix.net
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: analytics-server
+#               servicePort: 9080
+#             path: /
+#     - host: analytics-dashboard.mobileservices-staging.us-south.containers.mybluemix.net
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: analytics-dashboard
+#               servicePort: 39012
+#             path: /
+#     - host: analytics-servicebroker.mobileservices-staging.us-south.containers.mybluemix.net
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: analytics-servicebroker
+#               servicePort: 9080
+#             path: /
+#     - host: mfp-derbybackup-app.mobileservices-staging.us-south.containers.mybluemix.net
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: mfp-derbybackup-app
+#               servicePort: 3000
+#             path: /
+#     - host: mfp-poolmanager.mobileservices-staging.us-south.containers.mybluemix.net
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: mfp-poolmanager
+#               servicePort: 3000
+#             path: /
+#     - host: mfp-devicecount-billinvoice-creator.mobileservices-staging.us-south.containers.mybluemix.net
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: mfp-devicecount-billinvoice-creator
+#               servicePort: 3000
+#             path: /
+#     - host: mfp-billinvoice-creator.mobileservices-staging.us-south.containers.mybluemix.net
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: mfp-billinvoice-creator
+#               servicePort: 3000
+#             path: /
+#     - host: mfp-billing-aggregator.mobileservices-staging.us-south.containers.mybluemix.net
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: mfp-billing-aggregator
+#               servicePort: 3000
+#             path: /
+#     - host: mfbroker.mobileservices-staging.us-south.containers.mybluemix.net
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: mfp-service-broker
+#               servicePort: 3000
+#             path: /
+#     - host: mfporchestrator.mobileservices-staging.us-south.containers.mybluemix.net
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: mfp-orchestrator
+#               servicePort: 3000
+#             path: /
+#     - host: mfpfileserver.mobileservices-staging.us-south.containers.mybluemix.net
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: mfp-fileserver
+#               servicePort: 3000
+#             path: /
+#     - host: mfp-ltpa-server.mobileservices-staging.us-south.containers.mybluemix.net
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: mfp-ltpa-server
+#               servicePort: 9080
+#             path: /
+#     - host: analytics-dashboard.mobileservices-staging.us-south.containers.mybluemix.net
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: analytics-dashboard
+#               servicePort: 39012
+#             path: /
+#     - host: mf.mobileservices-staging.us-south.containers.mybluemix.net
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: mfp-orchestrator
+#               servicePort: 3000
+#             path: /mobilefoundation
+#           - backend:
+#               serviceName: mfp-overview-dashboard
+#               servicePort: 3000
+#             path: /liveness
+#           - backend:
+#               serviceName: mfp-overview-dashboard
+#               servicePort: 3000
+#             path: /readiness
+#           - backend:
+#               serviceName: mfp-overview-dashboard
+#               servicePort: 3000
+#             path: /mobile
+#           - backend:
+#               serviceName: mfp-admin-services
+#               servicePort: 9080
+#             path: /mfpadmin
+#     - host: analytics-server.mobileservices-staging.us-south.containers.mybluemix.net
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: analytics-server
+#               servicePort: 9080
+#             path: /
+#   tls:
+#     - hosts:
+#         - analytics-dashboard.mobileservices-staging.us-south.containers.mybluemix.net
+#       secretName: mobileservices-staging
+#     - hosts:
+#         - analytics-servicebroker.mobileservices-staging.us-south.containers.mybluemix.net
+#       secretName: mobileservices-staging
+#     - hosts:
+#         - mfp-derbybackup-app.mobileservices-staging.us-south.containers.mybluemix.net
+#       secretName: mobileservices-staging
+#     - hosts:
+#         - mfp-poolmanager.mobileservices-staging.us-south.containers.mybluemix.net
+#       secretName: mobileservices-staging
+#     - hosts:
+#         - mfp-devicecount-billinvoice-creator.mobileservices-staging.us-south.containers.mybluemix.net
+#       secretName: mobileservices-staging
+#     - hosts:
+#         - mfp-billinvoice-creator.mobileservices-staging.us-south.containers.mybluemix.net
+#       secretName: mobileservices-staging
+#     - hosts:
+#         - mfp-billing-aggregator.mobileservices-staging.us-south.containers.mybluemix.net
+#       secretName: mobileservices-staging
+#     - hosts:
+#         - mfporchestrator.mobileservices-staging.us-south.containers.mybluemix.net
+#       secretName: mobileservices-staging
+#     - hosts:
+#         - mf.mobileservices-staging.us-south.containers.mybluemix.net
+#       secretName: mobileservices-staging
+#     - hosts:
+#         - mfpfileserver.mobileservices-staging.us-south.containers.mybluemix.net
+#       secretName: mobileservices-staging
+#     - hosts:
+#         - mfbroker.mobileservices-staging.us-south.containers.mybluemix.net
+#       secretName: mobileservices-staging
+#     - hosts:
+#         - mfp-ltpa-server.mobileservices-staging.us-south.containers.mybluemix.net
+#       secretName: mobileservices-staging
+#     - hosts:
+#         - analytics-server.mobileservices-staging.us-south.containers.mybluemix.net
+#       secretName: mobileservices-staging
+#     - hosts:
+#         - analytics-server.mobileservices-staging.us-south.containers.mybluemix.net
+#       secretName: mobileservices-staging
+#     - hosts:
+#         - analytics-dashboard.mobileservices-staging.us-south.containers.mybluemix.net
+#       secretName: mobileservices-staging
